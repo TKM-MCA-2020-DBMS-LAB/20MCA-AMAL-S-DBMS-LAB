@@ -60,8 +60,6 @@ mysql> DESC employee;
 
     b.	department(dept_no, dept_name, location).
        
-      mysql>  CREATE table department(dept_no VARCHAR(20),
-     
      mysql> CREATE table department(dept_no VARCHAR(100),
                                     dept_name VARCHAR(100),
                                     location VARCHAR(100),
