@@ -23,18 +23,12 @@ mysql> select * from employee;
 
 mysql> delimiter //
 mysql> create Trigger inserting before insert on details for each row
-    ->     -> begin
-    ->     -> if new.identification_number <0 then set new.identification_number=0;
-    ->     -> end if;
-    ->     -> end //
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> begin
-    -> if new.identification_number <0 then set new.identification_numb' at line 2
-mysql> create trigger inserting before insert on employee for each row
-    -> begin
-    -> if new.emp_no <0 then set new.emp_no=0;
-    -> end if;
-    -> end //
-ERROR 1359 (HY000): Trigger already exists
+       -> begin
+       -> if new.identification_number <0 then set new.identification_number=0;
+       -> end if;
+       -> end //
+Query OK, 0 rows affected (0.02 sec)
+
 mysql> insert into employee values(4,"ARUN",'1998-07-09',"CLG_09",'2020-09-18',9876543210,19,98765);
     -> select * from employee;
     -> //
